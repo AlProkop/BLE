@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+     <meta name="format-detection" content="telephone=no">
+     <meta name="msapplication-tap-highlight" content="no">
+     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+ 
+     <link rel="stylesheet" href="./css/index.css">
+     <script type="text/javascript" src="./js/index.js"></script>
+ 
+ </head>
+ 
+ 
+ <!-- creating tabs based on W3school javascript tutorial -->
+ <!-- http://www.w3schools.com/howto/howto_js_tabs.asp -->
+ 
+ <body onload="createCharts()">
+ 
+ <ul class="tab">
+   <li><a href="javascript:void(0)" class="tablinks" onclick="openPage(event, 'PageMain')">Show Data</a></li>
+   <li><a href="javascript:void(0)" class="tablinks" onclick="openPage(event, 'PageSetup')">Setup</a></li>
+ </ul>
+ 
+ <div id="PageMain" class="tabcontent">
+           <div class="page-content">
+             <div class="gauges" id="temperature-gauge"></div>
+           </div>
+ </div>
+ 
+ <div id="PageSetup" class="tabcontent">
+           <div class="page-content" style="text-align: center; width: 100%">
+ 
+             <!-- Accent-colored raised button with ripple -->
+             <button disabled onclick="app.refreshDeviceList()" id="button-scan">
+               Scan
+             </button>
+ 
+             <button disabled onclick="ble.disconnect(iDry.id,app.bleConnectionFailure,app.bleConnectionFailure)" id="button-disconnect">
+               Disconnect Soliditek
+             </button>
+ 
+             <div id="info">Connection Info</div>
+             <div id="debug-info">Debug Info</div>
+             <div id="debug-area">debug area</div>
+ 
+             <table id='BLE-table' style="text-align: center; width: 100%">
+               <thead>
+                 <tr>
+                   <th class="mdl-data-table__cell--non-numeric">Device</th>
+                   <th class="mdl-data-table__cell--non-numeric">RSSI</th>
+                   <th class="mdl-data-table__cell--non-numeric">ID</th>
+                 </tr>
+               </thead>
+               <tbody id="BLE-table-body">
+               </tbody>
+             </table> 
+           
+           </div>
+ </div>
+ 
+ <script type="text/javascript" src="cordova.js"></script>
+ <script type="text/javascript" src="./js/raphael-2.1.4.min.js"></script>
+ <script type="text/javascript" src="./js/justgage.js"></script>
+ 
+     
+ </body>
+ </html> 
+ 

@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta name="format-detection" content="telephone=no">
+     <meta name="msapplication-tap-highlight" content="no">
+     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+ 
+     <link rel="stylesheet" href="./css/index.css">
+     <script type="text/javascript" src="./js/index.js"></script>
+ 
+ </head>
+ <body>
+ 
+ <div id="PageSetup">
+           <div class="page-content" style="text-align: center; width: 100%">
+ 
+             <button disabled onclick="app.refreshDeviceList()" id="button-scan">Scan</button>
+             <button disabled onclick="ble.disconnect('00:AE:FA:03:88:5B',app.bleConnectionFailure,app.bleConnectionFailure)" id="button-disconnect">
+               Disconnect
+             </button>
+ 
+             <div id="info"></div>
+             <div id="id-info"></div>
+             <div id="data-area"></div>
+ 
+             <table id='BLE-table' style="text-align: center; width: 100%">
+               <thead>
+                 <tr>
+                   <th>Device</th>
+                   <th>RSSI</th>
+                   <th>ID</th>
+                 </tr>
+               </thead>
+               <tbody id="BLE-table-body">
+               </tbody>
+             </table> 
+           
+           </div>
+ </div>
+ 
+ <script type="text/javascript" src="cordova.js"></script>
+ 
+     
+ </body>
+ </html> 
+ 
